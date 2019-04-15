@@ -9,6 +9,6 @@ var res = document.cookie
     .split ( "; " )
     .map ( x =>  {
         var tmp = x.split ( "=" );
-        tmp[0] === 'Your last visit' ? p.innerText =`${tmp[0]} + : + ${tmp[1]}  `: null;
+        tmp[0] === 'Your last visit' ? p.innerText = tmp[0] + ':'+ tmp[1]: null;
 })
  document.cookie =`Your last visit = ${new Date}`
