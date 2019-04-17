@@ -38,7 +38,7 @@ var res = document.cookie
 
 // let image =document.body.appendChild(document.createElement('img'));
 let text =document.body.appendChild(document.createElement('p'));
-
+document.body.style.backgroundImage=`url(https://picsum.photos/900/900/?random/2)`;
 document.body.style.fontSize = "xx-large";
 const historyArr = [];
 change = function() {
