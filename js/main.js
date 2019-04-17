@@ -35,7 +35,18 @@ var res = document.cookie
 // Отслеживать в панели разработчика изменения в localStorage
 
 
-console.log(location.hash);
-window.onhashchange = function() {
-    localStorage.setItem (  {"name":"Иван","lastVisit":"27.02.2018","lastPage":"/home/page_07"} );
-    alert( 'Спасибо' )}
+
+// let image =document.body.appendChild(document.createElement('img'));
+let text =document.body.appendChild(document.createElement('p'));
+
+document.body.style.fontSize = "xx-large";
+const historyArr = [];
+change = function() {
+    historyArr.push( { "pageId": location.hash, "starttime": Math.round(new Date().getTime()/1000)});
+    localStorage.setItem ( "history", JSON.stringify(historyArr));
+    document.body.style.backgroundImage=`url(https://picsum.photos/900/900/?random/${Math.round((Math.random())*1000)})`;
+    // image.src = `https://picsum.photos/200/300/?random/${Math.round((Math.random())*1000)}`;
+    text.innerHTML = 'This is page number :' + location.hash.substring(1);
+};
+
+window.addEventListener('hashchange',change)
